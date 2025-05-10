@@ -8,14 +8,10 @@ body {
     margin: 0;
     padding: 0;
     text-decoration: none;
-    overflow-x: hidden !important;
 }
 
 header {
     width: 100%;
-    height: 60vh;
-    overflow: hidden;
-    position: relative;
     object-fit: cover;
     overflow: hidden;
     position: sticky;
@@ -32,6 +28,11 @@ nav {
     font-size: 1em;
     height: 80px;
     box-shadow: 0 0 10px 0 rgb(206, 199, 199);
+}
+
+.container {
+    max-width: 1440px;
+    margin: auto;
 }
 
 .detail {
@@ -128,7 +129,7 @@ nav a:hover::after {
     margin-top: -5px;
 }
 
-.head {
+.hero {
     display: grid;
     gap: 20px;
     column-gap: 10px;
@@ -136,10 +137,9 @@ nav a:hover::after {
     grid-template-columns: repeat(2, 1fr);
 }
 
-.section .machine {
-    height: 80vh;
-    width: 100vh;
-    margin-top: -335px;
+.hero .image img {
+    height: auto;
+    width: 100%;
     border-radius: 0px 400px 400px 0px;
 }
 
@@ -201,89 +201,66 @@ nav a:hover::after {
     color: white;
 }
 
-.section-2 {
-    margin-top: 150px;
-}
 
-.section-2 h6 {
+.our-service .heading h6 {
     font-size: 15px;
     color: rgb(184, 70, 70);
-    margin-left: 150px;
-    margin-top: -70px;
 }
 
-.section-2 h1 {
-    margin-left: 150px;
-    margin-top: -20px;
+.our-service .heading h1 {
 
 }
 
-.sec-2 {
+.services {
     display: grid;
-    padding: 100px;
     grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-    margin-left: 40px;
-    margin-top: -100px;
-    height: 450px;
+    column-gap: 15px;
+    row-gap: 15px;
 }
 
 
-.box {
-    position: relative;
-    width: 370px;
-    margin: 3px 5px;
-    overflow: hidden;
+.our-service .box {
     border-radius: 15px;
     border: 1px solid rgb(211, 201, 201);
-    background-color: white;
-    z-index: -1;
 }
 
-.box img {
-    width: 300%;
+.our-service .box img {
     height: auto;
     border-radius: 15px;
     border: 1px solid gray;
     box-shadow: 0 1px 2px gray;
 }
 
-.box:hover {
+.our-service .box:hover {
     cursor: pointer;
     transform: scale(1.02);
 }
 
-.white {
-    position: absolute;
-    bottom: 3px;
+.our-service .box .white {
     align-items: center;
     border-radius: 0 0 15px 15px;
     background-color: white;
-    width: 100%;
-    height: 25%;
 }
 
-.white h2 {
+.our-service .box .white h2 {
     text-align: center;
     font-weight: 700;
     font-size: 25px;
-    margin-top: -50px;
     color: rgb(45, 42, 42);
     letter-spacing: 0.7px;
     line-height: 30px;
 }
 
-.white p {
+.our-service .box .white p {
     text-align: center;
     font-size: 17px;
     color: rgb(174, 170, 170);
     letter-spacing: 0.7px;
-    margin-top: -10px;
-    margin-left: 15px;
-    text-align: left;
+    padding: 5px;
 }
 
 
-.box img {
+.our-service .box img {
     width: 100%;
     border-radius: 15px;
     border: 1px solid gray;
@@ -440,13 +417,10 @@ nav a:hover::after {
 }
 
 .footer {
-    position: absolute;
     margin: 0;
     padding: 0;
     display: flex;
     background-color: #f79604;
-    height: 220px;
-    width: 185.1vh;
 }
 
 .menu-bar li {
@@ -538,23 +512,17 @@ h5 {
     width: 700px;
     font-size: 14px;
 }
-
-@media screen and (max-width:375px) {
-    body{
-        overflow-x: hidden !important;
-    }
-
-    header {
-        display: block;
-        height: 380px;
-    }
-
+@media screen and ( max-width: 768px ) {
     .menu-btn {
         display: block;
         padding: 10px;
         margin: 10px;
         height: 20px;
         width: 20px;
+    }
+    header {
+        display: block;
+        height: 380px;
     }
 /* 
       .cancel-btn {
@@ -598,6 +566,14 @@ h5 {
     nav ul li::after {
         display: none;
     }
+    
+    .hero {
+        grid-template-columns: auto;
+    }
+
+}
+
+@media screen and (max-width:375px) {
 
     .detail img {
         height: 15px;
